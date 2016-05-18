@@ -15,6 +15,7 @@ io_loop = tornado.ioloop.IOLoop.instance()
 config_path = "config"
 
 ENABLE_FACEBOOK_FEED = False
+USER_APP_ID = "573b7653cfbeb"
 
 
 def ioloop_wrapper(callback):

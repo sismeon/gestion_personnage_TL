@@ -14,10 +14,13 @@ characterApp.controller("page_ctrl", ['$scope', '$rootScope', '$http', '$locatio
      */
     $scope.changePage = function (event, pageName) {
       var index = $scope.lstPage.indexOf(pageName);
-      if (index >= 0)
+      if (index >= 0){
         $scope.activePage = index;
-      else
+        user = authService.get();
+      }
+      else{
         console.err("Cannot find page " + pageName);
+      }
     };
 
     $scope.changeSection = function (event, sectionName) {
@@ -39,6 +42,7 @@ characterApp.controller("page_ctrl", ['$scope', '$rootScope', '$http', '$locatio
     $rootScope.$on('user.login', function () {
       console.log("on user login");
       $http.defaults.headers.common.Authorization = 'Basic ' + btoa(':' + user.token());
+      authService.set(user);
     });
 
     $rootScope.$on('user.logout', function () {

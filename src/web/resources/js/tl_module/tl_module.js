@@ -13,9 +13,25 @@ characterApp.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
 }])
 
+characterApp.factory('authService', function() {
+ var savedData = {}
+ function set(data) {
+   savedData = data;
+ }
+ function get() {
+  return savedData;
+ }
+
+ return {
+  set: set,
+  get: get
+ }
+
+});
+
 characterApp.run(function ($window, user) {
   // userapp api
-  user.init({appId: '56d6ef67bce81'});
+  user.init({appId: '573b7653cfbeb'});
   user.onAuthenticationSuccess(function () {
     console.log("Authentification réussite!");
     $window.location.href = "/";

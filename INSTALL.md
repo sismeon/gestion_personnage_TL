@@ -90,7 +90,7 @@ On server side, files /src/web/handlers.py
 USER_APP_ID = "YOU_USER_APP_ID"
 ```
 
-On client side, files /src/web/static/local/js/tl_ctrl.js
+On client side, files /src/web/resources/js/tl_module/tl_ctrl.js
 ```{r, engine='python', count_lines}
 user.init({appId: "YOU_USER_APP_ID"});
 ```
