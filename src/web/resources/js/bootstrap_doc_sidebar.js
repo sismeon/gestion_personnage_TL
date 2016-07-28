@@ -1,9 +1,15 @@
 $('body').scrollspy({
   target: '.bs-docs-sidebar',
-  offset: 40
+  offset: 140
 });
 $("#sidebar").affix({
   offset: {
-    top: 60
+    top: 140
   }
 });
+// add collapse
+// $('.navbar-toggle').on('click', function () {
+//   if (!$(this).siblings('.navbar-toggle').hasClass('collapsed')) {
+//     $(this).siblings('.navbar-toggle').click();
+//   }
+// });
