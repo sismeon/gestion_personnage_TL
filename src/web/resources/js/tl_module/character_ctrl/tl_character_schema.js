@@ -758,11 +758,6 @@ function TL_Schema($scope) {
         style: {
           add: "btn-success"
         },
-      },
-      {
-        type: "submit",
-        style: "btn-info",
-        title: "Enregistrer"
       }
     ];
   }
