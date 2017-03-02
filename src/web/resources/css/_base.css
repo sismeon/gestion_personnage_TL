@@ -94,3 +94,27 @@ a:focus {
     .site-title {display:none;}
 
 }
+
+.subtitle-cell {
+  font-weight: bold;
+  text-align: center;
+}
+
+.small-cell-text {
+  font-size: 80%;
+}
+
+.smaller-cell-text {
+  font-size: 60%;
+}
+
+#table-to-print td {
+  border: 1px solid white;
+  width: 60px;
+}
+
+#table-to-print {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 600px;
+}
