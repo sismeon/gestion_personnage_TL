@@ -34,6 +34,10 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
   $scope.schema_char = {};
   $scope.form_char = [];
 
+  // using character sheet as cs for brevity
+  $scope.cs_player = {};
+  $scope.cs_setting = "empty";
+
   // fill user and character schema and form
   TL_Schema($scope);
 
@@ -116,6 +120,16 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
     }
     $scope.get_html_qr_code();
   }, true);
+
+  $scope.characterSheetPrintOptionChange = function(value) {
+    if ($scope.cs_setting == "filled") {
+      $scope.cs_player = angular.copy($scope.player);
+      $scope.cs_player.character = $scope.character;
+    } else {
+      $scope.cs_player = {};
+      console.log("Empty");
+    }
+  };
 
   $scope.newPlayer = function () {
     // create empty player with empty character

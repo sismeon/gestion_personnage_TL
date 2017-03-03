@@ -83,294 +83,301 @@
     </div>
   </div>
 
+  <div ng-show="player" class="col-sm-offset-4">
+    <input type="radio" ng-change="characterSheetPrintOptionChange()" ng-model="cs_setting" value="filled" name="cs_setting" id="rd_filled" >
+    <label for="rd_filled">Feuille remplis</label>
+    <input type="radio" ng-change="characterSheetPrintOptionChange()" value="empty" ng-model="cs_setting" id="rd_empty" name="cs_setting" checked>
+    <label for="rd_empty">Feuille vide</label>
+  </div>
+
   <!-- printable character sheet -->
 
-  <div id="manual_main_content">
+  <div ng-show="player" id="manual_main_content" class="col-sm-offset-4">
     <table id="table-to-print">
       <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <td class="subtitle-cell" colspan="1">TL</td>
-      <td colspan="8">Fiche De Personnage</td>
-      <td>Jeux Joués/XP</td>
-    </tr>
-    <tr>
-      <td rowspan="4"></td>
-      <td colspan="4">Nom:</td>
-      <td colspan="4">Karma:</td>
-      <td rowspan="29"></td>
-    </tr>
-    <tr>
-      <td colspan="5">Nom du Personnage:</td>
-      <td colspan="3">Race:</td>
-    </tr>
-    <tr>
-      <td colspan="3">Faction:</td>
-      <td colspan="5">Adresse Couriel:</td>
-    </tr>
-    <tr>
-      <td colspan="8">Sous-Faction:</td>
-    </tr>
-    <tr>
-      <td colspan="9"></td>
-    </tr>
-    <tr>
-      <td class="subtitle-cell" colspan="3">Endurence</td>
-      <td class="smaller-cell-text">Total:</td>
-      <td class="subtitle-cell" colspan="2">Énergie</td>
-      <td class="smaller-cell-text">Total:</td>
-      <td class="subtitle-cell" colspan="2" rowspan="2">Bloc de Production</td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <input type="radio">
-        +1 point de vie maximum
-      </td>
-      <td class="small-cell-text" colspan="3">
-        <input type="radio">
-        +2 point d'énergie maximum
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <input type="radio">
-        +1 point de vie maximum
-      </td>
-      <td class="small-cell-text" colspan="3">
-        <input type="radio">
-        +2 point d'énergie maximum
-      </td>
-      <td class="subtitle-cell" rowspan="2" colspan="2">Alchimie:</td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <input type="radio">
-        +1 point de vie maximum
-      </td>
-      <td class="small-cell-text" colspan="3">
-        <input type="radio">
-        +2 point d'énergie maximum
-      </td>
-    </tr>
-    <tr>
-      <td colspan="9"></td>
-    </tr>
-    <tr>
-      <td colspan="3">1ere Discipline:</td>
-      <td></td>
-      <td colspan="3">2e Discipline:</td>
-      <td colspan="2" rowspan="2">Artisant:</td>
-    </tr>
-    <tr>
-      <td colspan="3">Habileté A</td>
-      <td></td>
-      <td colspan="3">Habileté A</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td rowspan="2" colspan="2">Potion:</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td rowspan="2" colspan="2">Forgeron:</td>
-    </tr>
-    <tr>
-      <td colspan="3">Habileté B</td>
-      <td></td>
-      <td colspan="3">Habileté B</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td rowspan="2" colspan="2">Herboriste:</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td rowspan="2" colspan="2">Enchantement:</td>
-    </tr>
-    <tr>
-      <td colspan="7"></td>
-    </tr>
-    <tr>
-      <td colspan="3">3e Discipline:</td>
-      <td></td>
-      <td colspan="3">4e Discipline:</td>
-      <td rowspan="3" colspan="2">Rituel/École:</td>
-    </tr>
-    <tr>
-      <td colspan="3">Habileté A</td>
-      <td></td>
-      <td colspan="3">Habileté A</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td rowspan="3" colspan="2">Composantes Magiques:</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">Habileté B</td>
-      <td></td>
-      <td colspan="3">Habileté B</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td rowspan="3" colspan="2">Revenu:</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        Technique de Maitre
-      </td>
-      <td></td>
-      <td colspan="3">
-        Technique de Maitre
-      </td>
-      <td colspan="3">Commerce</td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td colspan="3" rowspan="5"></td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-      <td></td>
-      <td colspan="3">
-        <input type="radio">
-      </td>
-    </tr>
-  </table>
-</div> <!-- end of character_ctrl -->
-
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td class="subtitle-cell" colspan="1">TL</td>
+        <td colspan="8">Fiche De Personnage</td>
+        <td>Jeux Joués/XP</td>
+      </tr>
+      <tr>
+        <td rowspan="4"></td>
+        <td colspan="4">Nom: {{! cs_player.name }}</td>
+        <td colspan="4">Karma:</td>
+        <td rowspan="29"></td>
+      </tr>
+      <tr>
+        <td colspan="5">Nom du Personnage: {{! cs_player.character.name }}</td>
+        <td colspan="3">Race: {{! cs_player.character.race }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Faction: {{! cs_player.character.faction }}</td>
+        <td colspan="5">Adresse Couriel: {{! cs_player.email }}</td>
+      </tr>
+      <tr>
+        <td colspan="8">Sous-Faction:</td>
+      </tr>
+      <tr>
+        <td colspan="9"></td>
+      </tr>
+      <tr>
+        <td class="subtitle-cell" colspan="3">Endurence</td>
+        <td class="smaller-cell-text">Total:</td>
+        <td class="subtitle-cell" colspan="2">Énergie</td>
+        <td class="smaller-cell-text">Total:</td>
+        <td class="subtitle-cell" colspan="2" rowspan="2">Bloc de Production</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <input type="radio">
+          +1 point de vie maximum
+        </td>
+        <td class="small-cell-text" colspan="3">
+          <input type="radio">
+          +2 point d'énergie maximum
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <input type="radio">
+          +1 point de vie maximum
+        </td>
+        <td class="small-cell-text" colspan="3">
+          <input type="radio">
+          +2 point d'énergie maximum
+        </td>
+        <td class="subtitle-cell" rowspan="2" colspan="2">Alchimie:</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <input type="radio">
+          +1 point de vie maximum
+        </td>
+        <td class="small-cell-text" colspan="3">
+          <input type="radio">
+          +2 point d'énergie maximum
+        </td>
+      </tr>
+      <tr>
+        <td colspan="9"></td>
+      </tr>
+      <tr>
+        <td colspan="3">1ere Discipline:</td>
+        <td></td>
+        <td colspan="3">2e Discipline:</td>
+        <td colspan="2" rowspan="2">Artisant:</td>
+      </tr>
+      <tr>
+        <td colspan="3">Habileté A</td>
+        <td></td>
+        <td colspan="3">Habileté A</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td rowspan="2" colspan="2">Potion:</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td rowspan="2" colspan="2">Forgeron:</td>
+      </tr>
+      <tr>
+        <td colspan="3">Habileté B</td>
+        <td></td>
+        <td colspan="3">Habileté B</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td rowspan="2" colspan="2">Herboriste:</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td rowspan="2" colspan="2">Enchantement:</td>
+      </tr>
+      <tr>
+        <td colspan="7"></td>
+      </tr>
+      <tr>
+        <td colspan="3">3e Discipline:</td>
+        <td></td>
+        <td colspan="3">4e Discipline:</td>
+        <td rowspan="3" colspan="2">Rituel/École:</td>
+      </tr>
+      <tr>
+        <td colspan="3">Habileté A</td>
+        <td></td>
+        <td colspan="3">Habileté A</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td rowspan="3" colspan="2">Composantes Magiques:</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">Habileté B</td>
+        <td></td>
+        <td colspan="3">Habileté B</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td rowspan="3" colspan="2">Revenu:</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Technique de Maitre
+        </td>
+        <td></td>
+        <td colspan="3">
+          Technique de Maitre
+        </td>
+        <td colspan="3">Commerce</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td colspan="3" rowspan="5"></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+        <td></td>
+        <td colspan="3">
+          <input type="radio">
+        </td>
+      </tr>
+    </table>
+  </div> <!-- end of character_ctrl -->
+</div>
 {% end %}
