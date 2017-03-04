@@ -14,6 +14,9 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
   $scope.xp_default = 6;
   $scope.xp_bogue = 5;
 
+  $scope.sheet_view = {};
+  $scope.sheet_view.mode = "form_write";
+
   $scope.html_qr_code = "";
   $scope.url_qr_code = "";
 
@@ -35,8 +38,8 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
   $scope.form_char = [];
 
   // using character sheet as cs for brevity
-  $scope.cs_player = {};
-  $scope.cs_setting = "empty";
+  $scope.cs_player = $scope.player;
+  $scope.cs_setting = "filled";
 
   // fill user and character schema and form
   TL_Schema($scope);
@@ -110,6 +113,9 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
       if (!isDefined(firstChar.xp_autre)) {
         $scope.model_char.xp_autre = 0;
       }
+
+      $scope.cs_player = $scope.player;
+      $scope.cs_setting = "filled";
     } else {
       $scope.model_char = {};
       $scope.model_char.habilites = [{}];
@@ -117,17 +123,17 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
       $scope.model_char.rituel = [];
       $scope.model_char.xp_naissance = $scope.xp_bogue;
       $scope.model_char.xp_autre = 0;
+
+      $scope.cs_player = {};
     }
     $scope.get_html_qr_code();
   }, true);
 
-  $scope.characterSheetPrintOptionChange = function(value) {
+  $scope.characterSheetPrintOptionChange = function (value) {
     if ($scope.cs_setting == "filled") {
-      $scope.cs_player = angular.copy($scope.player);
-      $scope.cs_player.character = $scope.character;
+      $scope.cs_player = $scope.player;
     } else {
       $scope.cs_player = {};
-      console.log("Empty");
     }
   };
 
