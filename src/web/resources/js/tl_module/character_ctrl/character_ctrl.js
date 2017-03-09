@@ -39,7 +39,9 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
 
   // using character sheet as cs for brevity
   $scope.cs_player = $scope.player;
+  $scope.cs_character = $scope.character;
   $scope.cs_setting = "filled";
+  $scope.cs_checks = [];
 
   // fill user and character schema and form
   TL_Schema($scope);
@@ -129,12 +131,41 @@ characterApp.controller("character_ctrl", ["$scope", "$q", "$http", "$window", /
     $scope.get_html_qr_code();
   }, true);
 
+  $scope.$watch("character", function(value){
+    $scope.cs_character = $scope.character;
+  }, true);
+
   $scope.characterSheetPrintOptionChange = function (value) {
     if ($scope.cs_setting == "filled") {
       $scope.cs_player = $scope.player;
+      $scope.cs_character = $scope.character;
+      console.log($scope.getSheetOutput($scope.cs_character.endurance.total));
     } else {
       $scope.cs_player = {};
+      $scope.cs_character = {};
     }
+  };
+
+  //get the string to output on the character sheet
+  $scope.getSheetOutput = function(value) {
+
+    if (value == undefined) {
+      return "";
+    } else {
+      return value.toString();
+    }
+
+  };
+
+  //fills the checks array with booleans used as models to determine whether checkboxes are checked or not
+  $scope.setChecks = function(){
+
+    $scope.cs_checks = [];
+
+    [1, 2, 3].foreach(function(value){
+      $scope.cs_checks.push(cs_character.endurance.length >= value);
+      $scope.cs_checks.push(cs_character.energie.length >= value);
+    });
   };
 
   $scope.newPlayer = function () {

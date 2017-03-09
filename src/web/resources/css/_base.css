@@ -95,6 +95,10 @@ a:focus {
 
 }
 
+.sheet-value {
+  font-weight: bold;
+}
+
 .subtitle-cell {
   font-weight: bold;
   text-align: center;
